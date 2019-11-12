@@ -4,7 +4,7 @@ import unittest
 from insertion_sort import insertion_sort
 from selection_sort import selection_sort
 from merge_sort import merge_sort
-
+from bubble_sort import bubble_sort
 
 
 # unsorted array for testing and answers
@@ -34,12 +34,24 @@ class TestSort(unittest.TestCase):
             "Should be " + str(ans_array_2))
 
     def test_merge_sort(self):
-        self.assertEqual(merge_sort(uns_array_1,0,len(uns_array_1)-1), ans_array_1,
+        self.assertEqual(
+            merge_sort(uns_array_1,0,len(uns_array_1)-1), 
+            ans_array_1,
             "Should be " + str(ans_array_1))
 
     def test_merge_sort_rep(self):
-        self.assertEqual(merge_sort(uns_array_2,0,len(uns_array_2)-1), ans_array_2,
+        self.assertEqual(
+            merge_sort(uns_array_2,0,len(uns_array_2)-1), 
+            ans_array_2,
             "Should be " + str(ans_array_2))
 
+    def test_bubble_sort(self):
+        self.assertEqual(bubble_sort(uns_array_1), ans_array_1,
+            "Should be " + str(ans_array_1))
+
+    def test_bubble_sort_rep(self):
+        self.assertEqual(bubble_sort(uns_array_2), ans_array_2,
+            "Should be " + str(ans_array_2))
+        
 if __name__ == "__main__":
     unittest.main()
